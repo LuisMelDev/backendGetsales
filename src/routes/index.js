@@ -2,7 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const helmet = require("helmet");
 const compression = require("compression");
-const logger = require('morgan')
+const ssl = require('express-sslify')
 
 require("express-async-errors");
 const { NotFoundMidlleware, ErrorMiddleware } = require("../middlewares");
@@ -33,7 +33,7 @@ module.exports = function ({
     const apiRoutes = express.Router();
 
     apiRoutes
-        .use(logger('dev'))
+        .use(ssl.HTTPS({ trustProtoHeader: true }))
         .use(express.json())
         .use(cors())
         .use(helmet())

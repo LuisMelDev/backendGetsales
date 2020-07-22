@@ -9,7 +9,7 @@ class server {
         _express = express().use(router);
     }
     start() {
-        return _express.listen(_config.port, '0.0.0.0',() => {
+        return _express.listen(_config.port,() => {
             console.log("API RUNNING on PORT " + _config.port);
         });
     }

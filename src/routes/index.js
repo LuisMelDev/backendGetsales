@@ -2,6 +2,8 @@ const express = require("express");
 const cors = require("cors");
 const helmet = require("helmet");
 const compression = require("compression");
+const logger = require('morgan')
+
 require("express-async-errors");
 const { NotFoundMidlleware, ErrorMiddleware } = require("../middlewares");
 /*
@@ -31,6 +33,7 @@ module.exports = function ({
     const apiRoutes = express.Router();
 
     apiRoutes
+        .use(logger('dev'))
         .use(express.json())
         .use(cors())
         .use(helmet())

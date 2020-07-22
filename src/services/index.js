@@ -1,0 +1,16 @@
+module.exports = {
+    amperajeService: require("./amperaje.service"),
+    authService: require("./auth.service"),
+    bitacoraService: require("./bitacora.service"),
+    clienteService: require("./cliente.service"),
+    compraService: require("./compra.service"),
+    facturaService: require("./factura.service"),
+    grupoService: require("./grupo.service"),
+    inventarioService: require("./inventario.service"),
+    marcaService: require("./marca.service"),
+    operacionService: require("./operacion.service"),
+    productoService: require("./producto.service"),
+    proveedorService: require("./proveedor.service"),
+    rolService: require("./rol.service"),
+    usuarioService: require("./usuario.service"),
+};

@@ -1,0 +1,16 @@
+module.exports = {
+    amperajeController: require("./amperaje.controller"),
+    authController: require("./auth.controller"),
+    bitacoraController: require("./bitacora.controller"),
+    clienteController: require("./cliente.controller"),
+    compraController: require("./compra.controller"),
+    facturaController: require("./factura.controller"),
+    grupoController: require("./grupo.controller"),
+    inventarioController: require("./inventario.controller"),
+    marcaController: require("./marca.controller"),
+    operacionController: require("./operacion.controller"),
+    productoController: require("./producto.controller"),
+    proveedorController: require("./proveedor.controller"),
+    rolController: require("./rol.controller"),
+    usuarioController: require("./usuario.controller"),
+};

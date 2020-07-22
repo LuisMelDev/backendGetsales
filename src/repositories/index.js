@@ -1,0 +1,15 @@
+module.exports = {
+    amperajeRepository: require("./amperaje.repository"),
+    bitacoraRepository: require("./bitacora.repository"),
+    clienteRepository: require("./cliente.repository"),
+    compraRepository: require("./compra.repository"),
+    facturaRepository: require("./factura.repository"),
+    grupoRepository: require("./grupo.repository"),
+    inventarioRepository: require("./inventario.repository"),
+    marcaRepository: require("./marca.repository"),
+    operacionRepository: require("./operacion.repository"),
+    productoRepository: require("./producto.repository"),
+    proveedorRepository: require("./proveedor.repository"),
+    rolRepository: require("./rol.repository"),
+    usuarioRepository: require("./usuario.repository"),
+};

@@ -33,7 +33,7 @@ module.exports = function ({
     const apiRoutes = express.Router();
 
     apiRoutes
-        .use(ssl.HTTPS({ trustProtoHeader: true }))
+        .use(ssl.HTTPS())
         .use(express.json())
         .use(cors())
         .use(helmet())

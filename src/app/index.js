@@ -9,9 +9,7 @@ class server {
         _express = express().use(router);
     }
     start() {
-        return _express.listen( _config.port,'0.0.0.0',() => {
-            console.log("API RUNNING on PORT " + (process.env.PORT | _config.port));
-        });
+        return _express.listen(8080);
     }
 }
 

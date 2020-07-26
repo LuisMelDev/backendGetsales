@@ -73,7 +73,8 @@ class UsuarioController {
             const userExist = await _usuarioService.getUsuarioByUsername(
                 body.username
             );
-            if (userExist) {
+            const userToUpdate = await _usuarioService.get(id);
+            if (userExist.username !== userToUpdate.username) {
                 return ErrorHelper(
                     401,
                     "El usuario ya se encuentra registrado."

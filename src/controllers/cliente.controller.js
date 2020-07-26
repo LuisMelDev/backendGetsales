@@ -70,6 +70,14 @@ class ClienteController {
             await clienteSchema
                 .validate(body)
                 .catch((err) => ErrorHelper(401, err.errors[0]));
+            // Check if record already exist
+            const exists = await _clienteService.find(body.cedula);
+            if (exists) {
+                return ErrorHelper(
+                    403,
+                    "El cliente ya se encuentra registrado."
+                );
+            }
             const updatedCliente = await _clienteService.update(id, body);
             await _bitacoraService.register(
                 "UPDATE",

@@ -70,6 +70,14 @@ class ProveedorController {
             await proveedorSchema
                 .validate(body)
                 .catch((err) => ErrorHelper(401, err.errors[0]));
+            // Check if record already exist
+            const proveedorExist = await _proveedorService.find(body.rif);
+            if (proveedorExist) {
+                return ErrorHelper(
+                    403,
+                    "El proveedor ya se encuentra registrado."
+                );
+            }
             const updatedProveedor = await _proveedorService.update(id, body);
             await _bitacoraService.register(
                 "UPDATE",

@@ -70,6 +70,15 @@ class UsuarioController {
         const { body, user } = req;
         const { id } = req.params;
         try {
+            const userExist = await _usuarioService.getUsuarioByUsername(
+                body.username
+            );
+            if (userExist) {
+                return ErrorHelper(
+                    401,
+                    "El usuario ya se encuentra registrado."
+                );
+            }
             const updatedUsuario = await _usuarioService.update(id, body);
             await _bitacoraService.register(
                 "UPDATE",
@@ -149,7 +158,11 @@ class UsuarioController {
         const { id } = req.params;
         const { sort_by, order_by } = req.query;
         try {
-            const operaciones = await _usuarioService.getOperaciones(id, sort_by, order_by);
+            const operaciones = await _usuarioService.getOperaciones(
+                id,
+                sort_by,
+                order_by
+            );
             return res.send(operaciones);
         } catch (err) {
             console.error(err);
